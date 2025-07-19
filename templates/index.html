@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GM Auto Detailing Booking</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="https://chat.openai.com/file-5e846246a50b1359cf7572c1" alt="Logo" class="logo">
+    <h1>GM Auto Detailing Booking</h1>
+    <p>We use your postcode to determine availability based on your location in Sheen.</p>
+
+    <form method="POST">
+      <label>Full Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Phone Number:</label>
+      <input type="text" name="phone" required>
+
+      <label>Postcode:</label>
+      <input type="text" name="postcode" required>
+
+      <label>Service:</label>
+      <select name="service" required>
+        <option value="">--Select--</option>
+        <option value="Exterior Detail">Exterior Detail (1.5 hrs)</option>
+        <option value="Full Detail">Full Detail (2.5 hrs)</option>
+        <option value="Standard Membership">Standard Membership (2x/month)</option>
+        <option value="Premium Membership">Premium Membership (2x/month)</option>
+      </select>
+
+      <button type="submit">Check Availability</button>
+    </form>
+
+    {% if zone %}
+      <h2>You're in the {{ zone }} Zone</h2>
+    {% endif %}
+  </div>
+</body>
+</html>
